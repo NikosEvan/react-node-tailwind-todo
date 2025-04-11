@@ -13,12 +13,12 @@ app.use(express.json());
 
 let tasks = []
 
-// GET all tasks
+// get all tasks
 app.get('/api/tasks', (req, res) => {
     res.json(tasks);
 });
   
-// POST a new task
+// post new task
 app.post('/api/tasks', (req, res) => {
   const { text } = req.body;
   if (!text) {
@@ -33,21 +33,7 @@ app.post('/api/tasks', (req, res) => {
   res.status(201).json(newTask);
 });
 
-// PUT to update (toggle) a task
-app.put('/api/tasks/:id', (req, res) => {
-    const taskId = parseInt(req.params.id);
-    const { completed } = req.body;
-  
-    const taskIndex = tasks.findIndex((t) => t.id === taskId);
-    if (taskIndex === -1) {
-      return res.status(404).json({ message: 'Task not found' });
-    }
-  
-    tasks[taskIndex].completed = completed;
-    res.json(tasks[taskIndex]);
-  });
-  
-// DELETE a task
+// delete a task
 app.delete('/api/tasks/:id', (req, res) => {
   const taskId = parseInt(req.params.id);
   tasks = tasks.filter((t) => t.id !== taskId);
