@@ -1,12 +1,10 @@
 import { useState, useEffect } from 'react';
 import './App.css';
-// import axios from 'axios';
 
 function App() {
   const [tasks, setTasks] = useState([]);
   const [newTaskText, setNewTaskText] = useState('');
 
-  // Fetch tasks from server on component mount
   useEffect(() => {
     fetchTasks();
   }, []);
@@ -69,7 +67,7 @@ function App() {
       <div className="max-w-md mx-auto bg-white rounded shadow p-6">
         <h1 className="text-2xl font-bold mb-4 text-center">My To-Do List</h1>
 
-        {/* New Task Form */}
+        {/* New Task */}
         <form onSubmit={addTask} className="flex space-x-2 mb-4">
           <input
             type="text"
