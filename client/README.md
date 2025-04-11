@@ -1,3 +1,17 @@
+# Για να ανοιξει το website
+
+Ctrl + `  (για να ανοιξει το cmd)
+
+
+# Για commit & push
+
+git status
+git add .
+git commit -m "Message"
+git push
+
+# ------------------------------------
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
